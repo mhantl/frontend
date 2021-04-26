@@ -1,0 +1,24 @@
+FROM node:alpine
+USER root
+WORKDIR /app
+#WORKDIR /usr/src/app
+#RUN export PATH=$PATH:/app/node_modules
+COPY package.json .
+
+#RUN npm install
+RUN npm install -g n lts
+RUN npm install -g npm@7.11.0
+RUN npm install react
+#RUN npm install react-scripts -g --silent
+#RUN yarn run build
+
+#docker run -p 3000:3000 -v /app/node_modules -v pwd:/app image sh
+
+WORKDIR /app
+COPY . .
+
+#RUN npm install react
+#RUN npm start
+#RUN npm run build
+
+CMD ["npm", "run", "start"]
