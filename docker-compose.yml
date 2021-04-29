@@ -11,3 +11,13 @@ services:
         volumes: 
             - /app/node_modules
             - .:/app
+    tests:
+        environment: 
+            - CHOKIDAR_USEPOLLING=true
+        build: 
+            context: .
+            dockerfile: Dockerfile.dev
+        volumes: 
+            - /app/node_modules
+            - .:/app
+        command: ["npm","run","test"]

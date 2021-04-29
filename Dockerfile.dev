@@ -13,13 +13,8 @@ RUN npm install react-scripts -g
 #RUN npm run test --verbose
 #RUN yarn run build
 
-#docker run -p 3000:3000 -v /app/node_modules -v pwd:/app image sh
+#winpty docker run -it -p 3000:3000 -v /app/node_modules -v "/$(PWD)":/app mhantl/react-frontend
 
-COPY . .
-
-#RUN npm install react
-#RUN npm run build
-#RUN npm start
-#RUN sh
+#COPY . .
 
 CMD ["npm","run","start"]
