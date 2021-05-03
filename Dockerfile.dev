@@ -1,6 +1,6 @@
 FROM node:alpine
 USER root
-WORKDIR /app
+WORKDIR '/usr/src/app'
 #WORKDIR /usr/src/app
 #RUN export PATH=$PATH:/app/node_modules
 COPY package.json .
