@@ -8,10 +8,8 @@ COPY package.json .
 #RUN npm install
 RUN npm install -g n lts
 RUN npm install -g npm@7.11.2
-RUN npm audit
 RUN npm install react
 RUN npm install react-scripts -g
-RUN npm audit
 #RUN npm run test --verbose
 #RUN yarn run build
 
