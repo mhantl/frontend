@@ -15,6 +15,6 @@ RUN npm install react-scripts -g
 
 #winpty docker run -it -p 3000:3000 -v /app/node_modules -v "/$(PWD)":/app mhantl/react-frontend
 
-#COPY . .
+COPY . .
 
 CMD ["npm","run","start"]
