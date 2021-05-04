@@ -1,17 +1,14 @@
 FROM node:alpine
 USER root
-WORKDIR /app
-#WORKDIR /usr/src/app
-#RUN export PATH=$PATH:/app/node_modules
+WORKDIR '/usr/src/app'
+
 COPY package.json .
 
 #RUN npm install
-RUN npm install -g n lts
-RUN npm install -g npm@7.11.2
+RUN npm install n lts
+RUN npm install npm@7.11.2
 RUN npm install react
-RUN npm install react-scripts -g
-#RUN npm run test --verbose
-#RUN yarn run build
+RUN npm install react-scripts
 
 #winpty docker run -it -p 3000:3000 -v /app/node_modules -v "/$(PWD)":/app mhantl/react-frontend
 
